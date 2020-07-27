@@ -1,6 +1,7 @@
 access_key/access.json
 .idea/
 **/.ipynb_checkpoints
+data/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !models/.gitkeep
