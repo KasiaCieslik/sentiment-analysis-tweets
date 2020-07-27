@@ -1,3 +1,8 @@
 access_key/access.json
-data/
 .idea/
+**/.ipynb_checkpoints
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!models/.gitkeep
+/__pycache__
+src/data_retrieval/Twitter Streamer.py

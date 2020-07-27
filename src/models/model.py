@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-from sklearn.model_selection import GridSearchCV, RandomizedSearchCV
+from datetime import datetime
+from sklearn.model_selection import RandomizedSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
-import pickle
-
+import pickle 
 
 def random_search_best_estimator(scorer,param_grid,model_list,X_train, X_test, y_train, y_test):
     """return best estimator"""
@@ -38,5 +32,6 @@ def final_model(X_train, X_test, y_train, y_test,best_estimator):
     return final_accuracy_test,final_accuracy_train,pred_test,pred_train
 
 def save_model(path,file_name,best_estimator):
-    filename = path+'/'+ model_name
+    date = str(datetime.now().strftime("%Y%m%d_%H:%M"))
+    filename = path+'/'+ date+'_'+ file_name
     pickle.dump(best_estimator, open(filename, 'wb'))
