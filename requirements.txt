@@ -5,8 +5,4 @@ advertools
 spacy==2.2.4
 emoji
 spacymoji
-string
-re
-os
-string
 
