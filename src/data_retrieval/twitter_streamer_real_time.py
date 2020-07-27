@@ -1,6 +1,6 @@
 from twython import Twython
 import time
-from src.data_retrieval.open_json import open_json_file
+from open_json import open_json_file
 
 
 def scrap_tweet_from_twitter(query,language,creds_path, range_number,tweets_number_for_every_range):

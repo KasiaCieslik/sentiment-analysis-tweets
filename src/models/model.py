@@ -8,7 +8,7 @@ def random_search_best_estimator(scorer,param_grid,model_list,X_train, X_test, y
     """return best estimator"""
     results = []
     for c,model in enumerate(model_list):
-        grid_search = RandomizedSearchCV(model,param_grid[c],cv=5,n_iter=40,scoring=scorer)
+        grid_search = RandomizedSearchCV(model,param_grid[c],cv=5,n_iter=8,scoring=scorer)
         grid_search.fit(X_train,y_train)
         grid_results = grid_search.cv_results_
         results.append({'model_name':str(model_list[c]).split('X_train(')[0],'best_param':grid_search.best_params_,'best_score':grid_search.best_score_,'best_estimator':grid_search.best_estimator_})

@@ -1,4 +1,4 @@
-from src.features.spacy_helpers import setup_spacy
+from .spacy_helpers import setup_spacy
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import LabelEncoder
 from sklearn.base import BaseEstimator, TransformerMixin

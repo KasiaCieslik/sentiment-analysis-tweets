@@ -1,7 +1,7 @@
 import pandas as pd
 from src.features.spacy_helpers import setup_spacy
 
-def prepare_reference_emoji_list(fp='data/raw/emoji_list.csv', nlp=None):
+def prepare_reference_emoji_list(fp='../data/raw/emoji_list.csv', nlp=None):
     """preapre df with emoji in token form"""
     emoji_list = pd.read_csv(fp, index_col=0)
     emoji_token = [] 
