@@ -1,5 +1,15 @@
 def process_tweet(tweet):
-    """take only user defined informations"""
+    """
+    Take only user defined informations from tweets
+    Parameters
+    ----------
+    tweet: dict
+
+    Returns
+    -------
+    dict
+    """
+   
     d = {}
     d['user_loc'] = tweet['user']['location']
     d['hashtags'] = [hashtag['text'] for hashtag in tweet['entities']['hashtags']]

@@ -5,7 +5,18 @@
 
 
 def add_polarity_scores(df,emoji_dict, emoji_column='unique_emoji'):
-    """prepare list with polarity of emoji from 'unique_emoji' column which are in emoji_dict"""
+    """
+    Prepare list with polarity of emoji from 'unique_emoji' column which are in emoji_dict"
+    Parameters
+    ----------
+    df: pd.DataFrame
+    emoji_dict: dict
+    emoji_column: pandas.core.series.Series
+
+    Returns
+    -------
+    pd.DataFrame
+    """""
     all_emoji_scores = []
     for emoji_group in  df[emoji_column] :
         tweet_emoji_score_list = []
@@ -19,13 +30,31 @@ def add_polarity_scores(df,emoji_dict, emoji_column='unique_emoji'):
     return df
 
 def sum_polarity(df):
-    """return sum of polarity for unique emoji in every row"""
+    """
+    Return sum of polarity for unique emoji in every row
+    Parameters
+    ----------
+    df: pd.DataFrame
+
+    Returns
+    -------
+    pd.DataFrame
+    """
     df['sum_polarity_unique_emoji'] = df['polarity_for_unique_emoji'].map(sum)
     return df
 
 
 def prepare_target(df):
-    """take sum of polarity and use conditions to prepare the target"""
+    """
+    Take sum of polarity and use conditions to prepare the target
+    Parameters
+    ----------
+    df: pd.DataFrame
+
+    Returns
+    -------
+    pd.DataFrame
+    """
     sentiment_target = []
     for polarity in df['sum_polarity_unique_emoji']:
         if polarity <= -2:

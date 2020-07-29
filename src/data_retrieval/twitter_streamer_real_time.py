@@ -1,13 +1,23 @@
 from twython import Twython
 import time
-from open_json import open_json_file
+from .open_json import open_json_file
 
 
 def scrap_tweet_from_twitter(query,language,creds_path, range_number,tweets_number_for_every_range):
-    """real time tweets scraping
+    """
+    Real time tweets scraping
+
+    Parameters
+    ----------
+    query: str
+    language: str
+    creds_path: str
     range_number: int -number of for loops
     tweets_number_for_every_range: int -number of tweets which are scraped in every loop
-    number of downloaded tweets ~~ range_number*tweets_number_for_every_range
+
+    Returns
+    -------
+    List[dict]
     """
     creds = open_json_file(creds_path)
     tweets = []

@@ -2,7 +2,17 @@ import pandas as pd
 from src.features.spacy_helpers import setup_spacy
 
 def prepare_reference_emoji_list(fp='../data/raw/emoji_list.csv', nlp=None):
-    """preapre df with emoji in token form"""
+    """
+    Prepare dict with polarity for emoticons"
+    Parameters
+    ----------
+    fp; str
+    nlp: spacy.lang.en.English
+
+    Returns
+    -------
+    dict (key: 'str', value: int)
+    """
     emoji_list = pd.read_csv(fp, index_col=0)
     emoji_token = [] 
     for x in emoji_list['symbol']:

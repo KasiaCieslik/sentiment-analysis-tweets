@@ -4,11 +4,11 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
-
 import numpy as np
 nlp=setup_spacy()
+
 class average_tweet_vectorizer(BaseEstimator, TransformerMixin):
-    
+
     def __init__(self):
         pass
     
@@ -24,14 +24,36 @@ class average_tweet_vectorizer(BaseEstimator, TransformerMixin):
         return self
 
 def y_X_preparation(df):
-    "return numeric y,X"
+    """
+    Return numeric y,X
+    Parameters
+    ----------
+    df: pd.DataFrame
+
+    Returns
+    -------
+    X: pandas.core.series.Series
+    y: numpy.ndarray
+    """
+
     le = LabelEncoder()
     y = le.fit_transform(df['sentiment_target'])
     X = df['tokens']
     return X,y
 
 def train_test_preparation_for_model(X,y):
-    """prepare numeric features using Features Union and two classes"""
+    """
+    Prepare numeric features using Features Union and two classes
+    Parameters
+    ----------
+    X: pandas.core.series.Series
+    y: numpy.ndarray
+
+    Returns
+    -------
+    X_train, X_test: scipy.sparse.csr.csr_matrix
+    y_train, y_test: numpy.ndarray
+    """
     X = X.apply(lambda x: ' '.join(x))
     X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.2, random_state = 42)
     

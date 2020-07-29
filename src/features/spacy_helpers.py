@@ -1,5 +1,5 @@
 from spacy.lang.en.stop_words import STOP_WORDS as stop_words
-from src.data_preprocessing.clean_dataframe import unique_tokens
+from data_preprocessing.clean_dataframe import unique_tokens
 from spacymoji import Emoji
 import string 
 import spacy
@@ -7,13 +7,30 @@ import en_core_web_sm
 import numpy as np
 
 def setup_spacy():
+    """
+    Setup spacy parameters
+    Returns
+    -------
+    spacy.lang.en.English
+    """
     nlp = en_core_web_sm.load()
     emoji = Emoji(nlp)
     nlp.add_pipe(emoji, first=True)
     return nlp
 
 def add_spacy_features(df=None, column='tidy_text', nlp=None):
-    """add columns with features with spacy"""
+    """
+    Add columns with features with spacy
+    Parameters
+    ----------
+    df: pd.DataFrame
+    column: str
+    nlp: spacy.lang.en.English
+
+    Returns
+    -------
+    pd.DataFrame
+    """
     
     collect_tweets = []
     collect_pos = []
