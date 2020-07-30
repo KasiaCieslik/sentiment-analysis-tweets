@@ -7,8 +7,8 @@ Using sum of polarity the data was divided in two groups (positive/negative).
 TfidfVectorizer() and average_tweet_vectorizer() was used to prepare the features.
 
 ## Results
-- First experiment with different classifier showed that the best results was achieved with Random Forest Classifier.
- In this case an **accuracy was 0.66**. Ideas for improving the score are available.
+First experiment with different classifier showed that the best results for balanced dataset was achieved with Random Forest Classifier.
+ In this case an **accuracy was 0.66** for two classes. Ideas for improving the score are available.
  
 ## Navigate this repository
 - Before starting the project please set up your local environment and install [**requirements**](requirements.txt)
