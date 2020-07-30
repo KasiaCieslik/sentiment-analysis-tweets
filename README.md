@@ -8,13 +8,17 @@ I used TfidfVectorizer() and average_tweet_vectorizer() to prepare the features.
 ## Download data for experiment
 
 Data used for the experiment: 
-https://drive.google.com/file/d/1-7yg9HrAqtFvP5K5r35yKThiXKxZaVco/view?usp=sharing
+[Google Drive](https://drive.google.com/file/d/1-7yg9HrAqtFvP5K5r35yKThiXKxZaVco/view?usp=sharing)
+
 
 ![raw_dataframe.png](static/raw_dataframe.png) 
 
+
+## Navigate 
+[Raw data](src/data/raw/raw_tweets.csv)
 ## Download new data with your own criteria
-Before using 'tweets_scraper.py' visit https://stackabuse.com/accessing-the-twitter-api-with-python/ 
-and read 'Getting Credentials' part. 
+Before using 'tweets_scraper.py' visit [Stackabuse Page](https://stackabuse.com/accessing-the-twitter-api-with-python/) 
+and read **Getting Credentials** part. 
 To use consumer key/secret to authenticate the app you need to save credentials in ./acces_key/access.json
 
     {"CONSUMER_KEY": "key 1",
