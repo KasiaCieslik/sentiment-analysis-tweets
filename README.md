@@ -1,51 +1,39 @@
 
 # sentiment-analysis-of-tweets-using-emoticons
-In this project I downloaded tweets (Thython) and I semilabeled them using emojis.
-I used a table with polarity for every emoji and calculated sum of polarity for unique emojis for every tweet. 
-Using this information I grouped emojis in two groups (positive/negative). 
-I used TfidfVectorizer() and average_tweet_vectorizer() to prepare the features.
+The main purpose of this project was to develop a model that would predict emotions of Twitter users based on the emojis they used. 
+The data has been downloaded using Thython API. Then the tweets were semilabeled using emojis.
+The tabel with polarity for every emoji was used and sum of polarity for unique emojis for every tweet was calculated. 
+Using sum of polarity the data was divided in two groups (positive/negative). 
+TfidfVectorizer() and average_tweet_vectorizer() was used to prepare the features.
 
-## Download data for experiment
-
-Data used for the experiment: 
-[Google Drive](https://drive.google.com/file/d/1-7yg9HrAqtFvP5K5r35yKThiXKxZaVco/view?usp=sharing)
-
+## Results
+- First experiment with different classifier showed that the best results was achieved with Random Forest Classifier.
+ In this case an **accuracy was 0.66**. Ideas for improving the score are available.
+ 
+## Navigate this repository
+- Before starting the project please set up your local environment and install [**requirements**](requirements.txt)
+- **Data used for the experiment**: [Download raw data](https://drive.google.com/file/d/1-7yg9HrAqtFvP5K5r35yKThiXKxZaVco/view?usp=sharing) 
 
 ![raw_dataframe.png](static/raw_dataframe.png) 
-
-
-## Navigate 
-[Raw data](src/data/raw/raw_tweets.csv)
-## Download new data with your own criteria
-Before using 'tweets_scraper.py' visit [Stackabuse Page](https://stackabuse.com/accessing-the-twitter-api-with-python/) 
+- Before you [**download new data**](src/tweets_scraper.py) with your own criteria please visit [Stackabuse Page](https://stackabuse.com/accessing-the-twitter-api-with-python/) 
 and read **Getting Credentials** part. 
-To use consumer key/secret to authenticate the app you need to save credentials in ./acces_key/access.json
+To use consumer key/secret to authenticate the app you need to save credentials to `acces.json` file in [following location.](acces_key/access.json)
 
-    {"CONSUMER_KEY": "key 1",
+    ```
+  {"CONSUMER_KEY": "key 1",
     
     "CONSUMER_SECRET": "key 2",
     
     "ACCESS_TOKEN": "key 3",
     
-    "ACCESS_SECRET": "key 4"}
-
-To download new data use './tweets_scraper.py'
-You can change the query and language for searching tweets.
-To set number of download tweets use 'range_number,tweets_number_for_every_range' parameters
-
-## Data preprocessing and model training
-
-To do data preprocessing and model training use "data_preprocessing_model_training.py"
-
-#### Create features and target
+    "ACCESS_SECRET": "key 4"} ``` 
+- For preprocessing use [Data preprocessing](src/data_preprocessing.py) file.
+- For modeling use [Model training](src/model_training.py) file.
+- My model you can find on [Google Drive](https://drive.google.com/file/d/1OKG79fGBUrHgc9ErpQkwZCQGGrnbv2zC/view?usp=sharing). Your model will be saved [here](models/).
+- All plots you can find/save [here.](raports/figures)
 
 
-![df_with_polarity.png](static/df_with_polarity.png)
- 
-![best_estimator.png](static/best_estimator.png) 
 
-![accutacy_train_test.png](static/accutacy_train_test.png) 
-## What should I install
 
-All needed libraries are to find in 'requirements.txt' file.
+
  
