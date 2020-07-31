@@ -6,4 +6,5 @@ spacy==2.2.4
 emoji
 spacymoji
 pickle
-
+wordcloud
+ast
