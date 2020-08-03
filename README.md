@@ -30,7 +30,7 @@ To use consumer key/secret to authenticate the app you need to save credentials 
 - For preprocessing use [Data preprocessing](src/data_preprocessing.py) file.
 - For modeling use [Model training](src/model_training.py) file.
 - My model you can find on [Google Drive](https://drive.google.com/file/d/1OKG79fGBUrHgc9ErpQkwZCQGGrnbv2zC/view?usp=sharing). Your model will be saved [here](models/).
-- All plots you can find/save [here.](raports/figures)
+- All plots you can find/save [here.](reports/figures)
 
 
 
