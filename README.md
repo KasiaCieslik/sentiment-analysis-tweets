@@ -1,5 +1,5 @@
 
-# sentiment-analysis-of-tweets-using-emoticons
+# sentiment-analysis-of-tweets-using-emojis
 The main purpose of this project was to develop a model that would predict emotions of Twitter users based on the emojis they used. 
 The data has been downloaded using Thython API. Then the tweets were semilabeled using emojis.
 The tabel with polarity for every emoji was used and sum of polarity for unique emojis for every tweet was calculated. 
